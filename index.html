@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة تسجيل الطلاب</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="content">
+
+        <div class="address">
+            نظام إدارة تسجيل الطلاب
+            <p>إضافة وعرض والبحث عن بيانات الطلاب</p>
+        </div>
+
+        <div class="formshow">
+
+            <div class="form">
+                <h2>بيانات الطالب</h2>
+
+                <form id="studentForm">
+
+                    <label>اسم الطالب</label>
+                    <input type="text" id="studentName" placeholder="ادخل اسم الطالب" required>
+
+                    <label>القسم</label>
+                    <select id="dept" required>
+                        <option value="">اختر القسم</option>
+                        <option value="علوم حاسوب">علوم حاسوب</option>
+                        <option value="نظم معلومات">نظم معلومات</option>
+                        <option value="امن سيبراني">امن سيبراني</option>
+                        <option value="هندسة مدني">هندسة مدني</option>
+                        <option value="هندسة معماري">هندسة معماري</option>
+                    </select>
+
+                    <label>المستوى</label>
+                    <select id="level" required>
+                        <option value="">اختر المستوى</option>
+                        <option value="الأول">الأول</option>
+                        <option value="الثاني">الثاني</option>
+                        <option value="الثالث">الثالث</option>
+                        <option value="الرابع">الرابع</option>
+                    </select>
+
+                    <label>النظام</label>
+                    <select id="system" required>
+                        <option value="عام">عام</option>
+                        <option value="موازي">موازي</option>
+                    </select>
+
+                    <label>حالة الطالب</label>
+                    <select id="status" required>
+                        <option value="منتظم">منتظم</option>
+                        <option value="متوقف">متوقف</option>
+                    </select>
+
+                    <button type="submit" id="addBtn">إضافة الطالب</button>
+                </form>
+            </div>
+
+            <div class="show">
+
+                <h2>الطلاب المسجلون</h2>
+
+                <div class="statistics">
+                    <div class="stat total">
+                        <strong id="totalStudents">0</strong>
+                        <span>إجمالي الطلاب</span>
+                    </div>
+
+                    <div class="stat results">
+                        <strong id="deptStudents">0</strong>
+                        <span>نتائج البحث</span>
+                    </div>
+                </div>
+
+                <div class="searchBox">
+                    <input type="text" id="searchInput" placeholder="ابحث باسم الطالب">
+
+                    <select id="filterDept">
+                        <option value="">جميع الأقسام</option>
+                        <option value="علوم حاسوب">علوم حاسوب</option>
+                        <option value="نظم معلومات">نظم معلومات</option>
+                        <option value="امن سيبراني">امن سيبراني</option>
+                        <option value="هندسة مدني">هندسة مدني</option>
+                        <option value="هندسة معماري">هندسة معماري</option>
+                    </select>
+
+                    <select id="filterLevel">
+                        <option value="">جميع المستويات</option>
+                        <option value="الأول">الأول</option>
+                        <option value="الثاني">الثاني</option>
+                        <option value="الثالث">الثالث</option>
+                        <option value="الرابع">الرابع</option>
+                    </select>
+                </div>
+
+                <div class="buttons">
+                    <button id="showAllBtn">عرض الكل</button>
+                    <button id="resetBtn">مسح جميع البيانات</button>
+                </div>
+
+                <div class="tableBox">
+                    <table>
+                    <thead>
+                        <tr>
+                            <th>م</th>
+                            <th>اسم الطالب</th>
+                            <th>القسم</th>
+                            <th>المستوى</th>
+                            <th>النظام</th>
+                            <th>الحالة</th>
+                            <th>العمليات</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
